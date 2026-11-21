@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08080b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="POTATO FN">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>POTATO FN V2</title>
+<style>
+:root{color-scheme:dark;--bg:#07070a;--panel:#111116;--panel2:#17131a;--line:#4b1723;--red:#ff304b;--muted:#a99ba1;--text:#f6edf0;--green:#64e6a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#3b101d 0%,#10090e 35%,var(--bg) 72%);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 14px calc(90px + env(safe-area-inset-bottom))}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:760px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:18px 4px 14px}.brand{font-weight:950;letter-spacing:.09em;font-size:25px}.brand span{color:var(--red)}.sub{color:var(--muted);font-size:10px;letter-spacing:.16em;margin-top:4px}.status{border:1px solid #28543e;color:var(--green);border-radius:99px;padding:6px 10px;font-size:10px;font-weight:800;letter-spacing:.1em}
+.hero{border:1px solid #772236;border-radius:22px;padding:20px;background:linear-gradient(135deg,#210b13,#100d14 58%,#190a10);box-shadow:0 0 28px #b51b3020,inset 0 1px #ffffff0c;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:180px;height:180px;border:1px solid #ff304b30;border-radius:50%;right:-70px;top:-85px;box-shadow:0 0 0 20px #ff304b09,0 0 0 42px #ff304b07}.eyebrow{font-size:10px;color:#ff9aa8;letter-spacing:.18em;font-weight:800}.hero h1{font-size:clamp(30px,8vw,48px);margin:8px 0 4px;letter-spacing:-.04em}.hero p{color:#c8aeb5;margin:0;max-width:450px;line-height:1.45}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{border:1px solid #6c2636;border-radius:8px;padding:7px 10px;color:#f2cbd2;font-size:11px;background:#170b10}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:13px 0}.metric,.card{background:linear-gradient(145deg,#151219,#0e0d12);border:1px solid var(--line);border-radius:16px;padding:14px}.metric b{display:block;color:var(--red);font-size:19px}.metric small{color:var(--muted);font-size:10px;letter-spacing:.1em}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:16px 0}.nav button{background:#100e13;border:1px solid #40202a;border-radius:12px;color:#cbb9bf;padding:12px 5px;font-size:11px;font-weight:750}.nav button.active{background:#3a101b;border-color:var(--red);color:white;box-shadow:0 0 15px #ff304b24}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:18px 2px 10px}.section-title h2{font-size:14px;letter-spacing:.12em;margin:0}.tag{font-size:10px;color:#ff9aa8;border:1px solid #642232;padding:5px 8px;border-radius:99px}
+.card{margin:10px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.label{font-weight:750}.hint{font-size:12px;color:var(--muted);line-height:1.45;margin-top:5px}.switch{appearance:none;width:46px;height:27px;border-radius:99px;background:#40353a;position:relative;transition:.2s;flex:none}.switch:before{content:"";position:absolute;width:21px;height:21px;top:3px;left:3px;border-radius:50%;background:white;transition:.2s}.switch:checked{background:var(--red)}.switch:checked:before{transform:translateX(19px)}
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.opt{border:1px solid #49303a;background:#100e13;color:#cdbbc1;border-radius:10px;padding:11px 5px;font-size:11px;font-weight:750}.opt.selected{border-color:var(--red);background:#35101b;color:white;box-shadow:inset 0 0 0 1px #ff304b55}
+.range{width:100%;accent-color:var(--red);margin:13px 0}.select{background:#0c0b10;border:1px solid #50303a;color:white;border-radius:10px;padding:11px;width:100%;margin-top:9px}
+.primary{border:0;background:linear-gradient(100deg,#c41432,#ff304b);color:white;border-radius:12px;padding:14px 16px;font-weight:900;letter-spacing:.04em;width:100%;box-shadow:0 8px 22px #ff304b25}.secondary{background:#171219;border:1px solid #59303b;color:#f5dce2;border-radius:11px;padding:11px 13px;font-weight:750}
+.preview{background:#08080b;border:1px dashed #713044;border-radius:13px;padding:14px;margin-top:12px}.preview strong{color:var(--red);font-size:13px}.bar{height:7px;background:#2c2027;border-radius:9px;overflow:hidden;margin-top:9px}.bar i{display:block;height:100%;width:72%;background:linear-gradient(90deg,#a70e2a,#ff5368);border-radius:9px}
+.notice{font-size:11px;color:#c4aeb5;line-height:1.5;border-left:2px solid #a91e37;padding:9px 11px;background:#160d12;border-radius:0 9px 9px 0;margin-top:12px}
+.bottom{position:fixed;bottom:0;left:0;right:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#08080bea;backdrop-filter:blur(18px);border-top:1px solid #4a1b28}.bottom-inner{max-width:760px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}.bottom small{color:var(--muted);font-size:10px}.bottom b{font-size:12px}.hidden{display:none!important}
+@media(min-width:600px){.nav{grid-template-columns:repeat(4,1fr)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid2 .card{margin:0}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div><div class="brand">POTATO<span> FN</span></div><div class="sub">IOS COMPANION • BUILD 2.0.0</div></div><div class="status">● READY</div></header>
+<section class="hero"><div class="eyebrow">CART3R.JAILBREAK / PROJECT SERIES</div><h1>LOW SPECS.<br><span style="color:#ff4058">BIG ENERGY.</span></h1><p>A compact Fortnite companion dashboard with graphics presets, controller practice tools, and saved local preferences.</p><div class="chips"><span class="chip">IPHONE READY</span><span class="chip">PWA BUILD</span><span class="chip">V2.0</span></div></section>
+<div class="metrics"><div class="metric"><b id="metricPreset">ULTRA</b><small>GRAPHICS PRESET</small></div><div class="metric"><b id="metricFps">60</b><small>FPS TARGET*</small></div><div class="metric"><b id="metricStatus">ON</b><small>POTATO MODE</small></div></div>
+<nav class="nav" aria-label="Main navigation"><button class="active" data-tab="graphics">▦<br>GRAPHICS</button><button data-tab="controller">◎<br>CONTROLLER</button><button data-tab="practice">⌁<br>PRACTICE</button><button data-tab="settings">⚙<br>SETTINGS</button></nav>
+<main>
+<section id="graphics" class="panel">
+<div class="section-title"><h2>01 / POTATO GRAPHICS</h2><span class="tag">VISUAL PROFILE</span></div>
+<div class="card"><div class="row"><div><div class="label">Enable Potato Graphics</div><div class="hint">Applies the selected low-detail style to this companion dashboard.</div></div><input id="potato" class="switch" type="checkbox" checked aria-label="Enable Potato Graphics"></div>
+<div class="label" style="margin-top:18px">Graphics preset</div><div class="options" id="presetOptions"><button class="opt" data-value="Low Potato">LOW<br>POTATO</button><button class="opt selected" data-value="Ultra Potato">ULTRA<br>POTATO</button><button class="opt" data-value="Maximum Potato">MAX<br>POTATO</button></div>
+<div class="preview"><div class="row"><span class="hint" style="margin:0">ACTIVE PROFILE</span><strong id="profileText">ULTRA POTATO</strong></div><div class="bar"><i id="profileBar"></i></div><div class="hint" id="profileHint">Balanced low-detail companion theme.</div></div></div>
+<div class="grid2"><div class="card"><div class="label">Texture detail</div><select class="select" id="textures"><option>Very Low</option><option selected>Low</option><option>Medium</option></select><div class="hint">Preview-only interface preference.</div></div><div class="card"><div class="label">Shadow effects</div><div class="row" style="margin-top:12px"><span class="hint">Reduced shadows</span><input id="shadows" class="switch" type="checkbox" checked></div><div class="hint">Lowers decorative effects in this app.</div></div></div>
+<div class="card"><div class="label">FPS target preference*</div><div class="options" id="fpsOptions"><button class="opt" data-value="30">30 FPS</button><button class="opt selected" data-value="60">60 FPS</button><button class="opt" data-value="120">120 FPS</button></div><div class="hint">A preference label only; it cannot set Fortnite's frame rate.</div></div>
+</section>
+<section id="controller" class="panel hidden">
+<div class="section-title"><h2>02 / CONTROLLER</h2><span class="tag">DUALSENSE PROFILE</span></div>
+<div class="card"><div class="row"><div><div class="label">Controller profile</div><div class="hint">PS5 DualSense • iPhone-compatible controller</div></div><span class="tag">PROFILE 01</span></div><div class="label" style="margin-top:18px">Stick sensitivity (practice reference)</div><input class="range" id="sensitivity" type="range" min="1" max="100" value="55"><div class="row"><span class="hint">Precision</span><b id="sensitivityValue">55 / 100</b><span class="hint">Fast</span></div></div>
+<div class="card"><div class="row"><div><div class="label">Button layout notes</div><div class="hint">Save your preferred controller layout for reference.</div></div></div><select class="select" id="layout"><option>Builder Pro</option><option>Custom</option><option>Combat Pro</option></select><div class="notice">This companion cannot remap DualSense hardware or inject controller inputs into Fortnite.</div></div>
+</section>
+<section id="practice" class="panel hidden">
+<div class="section-title"><h2>03 / PRACTICE TOOLS</h2><span class="tag">SAFE COMPANION</span></div>
+<div class="card"><div class="row"><div><div class="label">Crosshair practice overlay</div><div class="hint">Shows a crosshair inside the practice panel only.</div></div><input id="crosshair" class="switch" type="checkbox" checked></div><div class="row" style="margin-top:16px"><div><div class="label">Edit confirmation drill</div><div class="hint">Release-to-confirm timing practice prompt.</div></div><button class="secondary" id="startDrill">START</button></div><div class="preview" id="drillBox"><strong>READY WHEN YOU ARE</strong><div class="hint">Start the drill to reveal the next practice instruction.</div></div></div>
+<div class="card"><div class="label">Aim training timer</div><div class="hint">A simple focus timer; it does not automate aiming.</div><div class="row" style="margin-top:12px"><strong id="timer">00:30</strong><button class="secondary" id="timerButton">START TIMER</button></div></div>
+</section>
+<section id="settings" class="panel hidden">
+<div class="section-title"><h2>04 / SETTINGS</h2><span class="tag">LOCAL PROFILE</span></div>
+<div class="card"><div class="label">App information</div><div class="row" style="margin-top:12px"><span class="hint">Application</span><b>POTATO FN V2</b></div><div class="row" style="margin-top:10px"><span class="hint">Platform</span><b>iOS / PWA</b></div><div class="row" style="margin-top:10px"><span class="hint">Preference storage</span><b>On this device</b></div></div>
+<div class="card"><div class="label">Install on iPhone</div><div class="hint">In Safari, tap Share → Add to Home Screen. The app must be hosted over HTTPS for installation and offline caching.</div><button class="secondary" id="installHelp" style="margin-top:12px">SHOW INSTALL STEPS</button><div id="installSteps" class="notice hidden">1. Upload the extracted project folder to a static HTTPS host. 2. Open its website in Safari. 3. Tap Share. 4. Choose Add to Home Screen. 5. Tap Add.</div></div>
+<div class="card"><div class="row"><div><div class="label">Reset preferences</div><div class="hint">Restore the default V2 profile.</div></div><button class="secondary" id="reset">RESET</button></div></div>
+<div class="notice">POTATO FN is an unofficial companion prototype. It does not modify Fortnite files, bypass protections, provide cheats, or change in-game graphics/FPS. All graphics controls affect this dashboard only.</div>
+</section>
+</main>
+</div>
+<div class="bottom"><div class="bottom-inner"><div><b>POTATO FN V2</b><br><small>LOCAL COMPANION CONFIGURATION</small></div><button class="primary" id="save" style="width:auto;min-width:130px">SAVE PROFILE</button></div></div>
+<script>
+const defaults={potato:true,preset:"Ultra Potato",fps:"60",textures:"Low",shadows:true,sensitivity:55,layout:"Builder Pro",crosshair:true};
+let state={...defaults};
+const $=id=>document.getElementById(id);
+function load(){try{state={...defaults,...JSON.parse(localStorage.getItem("potatoFnV2")||"{}")}}catch{};render()}
+function save(){localStorage.setItem("potatoFnV2",JSON.stringify(state));$("save").textContent="SAVED ✓";setTimeout(()=>$("save").textContent="SAVE PROFILE",1200)}
+function render(){
+$("potato").checked=state.potato;$("textures").value=state.textures;$("shadows").checked=state.shadows;$("sensitivity").value=state.sensitivity;$("sensitivityValue").textContent=state.sensitivity+" / 100";$("layout").value=state.layout;$("crosshair").checked=state.crosshair;
+document.querySelectorAll("#presetOptions .opt").forEach(b=>b.classList.toggle("selected",b.dataset.value===state.preset));
+document.querySelectorAll("#fpsOptions .opt").forEach(b=>b.classList.toggle("selected",b.dataset.value===state.fps));
+$("metricPreset").textContent=state.preset==="Maximum Potato"?"MAX":state.preset==="Ultra Potato"?"ULTRA":"LOW";$("metricFps").textContent=state.fps;$("metricStatus").textContent=state.potato?"ON":"OFF";
+$("profileText").textContent=state.potato?state.preset.toUpperCase():"DISABLED";
+$("profileHint").textContent=state.preset==="Maximum Potato"?"Maximum low-detail styling selected.":state.preset==="Ultra Potato"?"Balanced low-detail companion theme.":"Light low-detail styling selected.";
+$("profileBar").style.width=state.preset==="Maximum Potato"?"25%":state.preset==="Ultra Potato"?"48%":"72%";
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("hidden",p.id!==b.dataset.tab));}));
+$("potato").addEventListener("change",e=>{state.potato=e.target.checked;render()});
+$("presetOptions").addEventListener("click",e=>{let b=e.target.closest("button[data-value]");if(b){state.preset=b.dataset.value;render()}});
+$("fpsOptions").addEventListener("click",e=>{let b=e.target.closest("button[data-value]");if(b){state.fps=b.dataset.value;render()}});
+$("textures").addEventListener("change",e=>state.textures=e.target.value);$("shadows").addEventListener("change",e=>state.shadows=e.target.checked);
+$("sensitivity").addEventListener("input",e=>{state.sensitivity=+e.target.value;$("sensitivityValue").textContent=state.sensitivity+" / 100"});
+$("layout").addEventListener("change",e=>state.layout=e.target.value);$("crosshair").addEventListener("change",e=>state.crosshair=e.target.checked);
+$("save").addEventListener("click",save);
+$("reset").addEventListener("click",()=>{state={...defaults};render();save()});
+$("installHelp").addEventListener("click",()=>$("installSteps").classList.toggle("hidden"));
+const drills=["Hold your edit input, make the selection, then release to confirm.","Focus on a clean edit reset before starting the next repetition.","Repeat slowly and prioritize accuracy over speed."];
+$("startDrill").addEventListener("click",()=>{let msg=drills[Math.floor(Math.random()*drills.length)];$("drillBox").innerHTML="<strong>PRACTICE INSTRUCTION</strong><div class='hint'></div>";$("drillBox").querySelector(".hint").textContent=msg});
+let timerInt=null,remaining=30;
+$("timerButton").addEventListener("click",()=>{if(timerInt){clearInterval(timerInt);timerInt=null;$("timerButton").textContent="RESUME";return}$("timerButton").textContent="PAUSE";timerInt=setInterval(()=>{remaining--;if(remaining<=0){clearInterval(timerInt);timerInt=null;remaining=30;$("timerButton").textContent="START AGAIN"}$("timer").textContent="00:"+String(remaining).padStart(2,"0")},1000)});
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+load();
+</script>
+</body></html>
