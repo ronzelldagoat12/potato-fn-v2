@@ -1,23 +1,12 @@
-# POTATO FN V2
+# POTATO FN V3 — iOS PWA companion
 
-An iPhone-friendly Progressive Web App companion prototype.
+Features: browser performance readouts (online status, viewport, pixel ratio, local JS timing test); Low/Ultra/Maximum Potato interface presets; texture/shadow and FPS preference labels; DualSense reference profile with play style and sensitivity sliders; aim prompts; guided Release-to-Confirm edit drill; focus timer; local preferences; PWA manifest and offline service worker.
 
-## Included
-- Potato Graphics toggle and Low / Ultra / Maximum presets
-- Companion-only texture, shadow, and FPS preference controls
-- DualSense profile reference controls
-- Release-to-confirm practice prompts
-- Aim-training focus timer
-- Local profile persistence
-- PWA manifest, icons, and offline service worker
+## Update your existing GitHub Pages site
+Upload the contents of this folder to the root of your existing `potato-fn-v2` repository, replacing `index.html`, `manifest.webmanifest`, `sw.js`, `README.md`, and the `icons` folder. Keep `index.html` at the root, then commit the changes. Your existing Pages URL remains the same.
 
-## Run locally
-Open `index.html` in a browser for a basic preview. PWA installation and service-worker offline support require HTTPS hosting (or localhost).
+## iPhone
+Open the Pages URL in Safari. If already installed, close and reopen the Home Screen app after GitHub Pages finishes deploying. If it still displays V2, remove the Home Screen shortcut, clear Safari website data for that site, reload the URL, and add it again.
 
-## Install on iPhone
-1. Upload the contents of this folder to an HTTPS static host.
-2. Open the hosted URL in Safari on your iPhone.
-3. Tap Share -> Add to Home Screen -> Add.
-
-## Important limitation
-This is an unofficial companion dashboard. It does not inject into Fortnite, alter game files, automate gameplay, remap controller hardware, or change Fortnite's actual graphics or frame rate. The graphics settings style this companion app only.
+## Limits
+Unofficial companion only. It does not inject into Fortnite, modify game files, automate gameplay, remap controller hardware, or change Fortnite's actual graphics, FPS, ping, or device performance. All graphics controls style this companion app.

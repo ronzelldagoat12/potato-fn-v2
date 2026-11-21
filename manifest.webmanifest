@@ -1,11 +1,11 @@
 {
-  "name": "POTATO FN V2",
+  "name": "POTATO FN V3",
   "short_name": "POTATO FN",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07070a",
+  "background_color": "#08080b",
   "theme_color": "#08080b",
-  "description": "Fortnite companion dashboard with Potato Graphics and practice tools.",
+  "description": "iOS Fortnite companion dashboard and practice tools.",
   "icons": [
     {
       "src": "icons/icon-192.png",
