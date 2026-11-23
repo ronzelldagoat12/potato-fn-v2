@@ -12,4 +12,4 @@ Open the Pages URL in Safari. If already installed, close and reopen the Home Sc
 Unofficial companion only. It does not inject into Fortnite, modify game files, automate gameplay, remap controller hardware, or change Fortnite's actual graphics, FPS, ping, or device performance. All graphics controls style this companion app.
 
 
-Apply Settings Guide: adds a manual Fortnite settings checklist for iPhone. It does not directly modify Fortnite or enable unavailable options.
+FPS Boost / Low Latency panel: practical iPhone and Fortnite settings checklist. No zero-delay guarantee, game injection, hidden FPS unlock, or system-level controller remapping.
