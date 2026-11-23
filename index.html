@@ -4,7 +4,7 @@
 <header class="top"><div><div class="brand">POTATO<span> FN</span></div><div class="sub">V3.0 • IOS COMPANION CONTROL DECK</div></div><span class="tag">● READY</span></header>
 <section class="hero"><div class="sub">CART3R.JAILBREAK / PROJECT POTATO</div><h1>PERFORMANCE<br><span>COMMAND DECK.</span></h1><div class="hint">Graphics profiles, DualSense reference settings, and focused aim/edit drills for iPhone.</div><div class="chips"><span class="chip">PWA READY</span><span class="chip">LOCAL SAVES</span><span class="chip">V3.0.0</span></div></section>
 <div class="stats"><div class="stat"><b id="sp">ULTRA</b><small>VISUAL PRESET</small></div><div class="stat"><b id="sf">60</b><small>FPS PREFERENCE*</small></div><div class="stat"><b id="sn">ONLINE</b><small>NETWORK</small></div></div>
-<nav class="nav"><button class="active" data-tab="perf">▦<br>PERF</button><button data-tab="fpsboost">⚡<br>FPS BOOST</button><button data-tab="gfx">◈<br>GRAPHICS</button><button data-tab="pad">◎<br>DUALSENSE</button><button data-tab="practice">⌁<br>PRACTICE</button><button data-tab="settings">⚙<br>SETTINGS</button></nav>
+<nav class="nav"><button class="active" data-tab="perf">▦<br>PERF</button><button data-tab="fpsboost">⚡<br>FPS BOOST</button><button data-tab="gfx">◈<br>GRAPHICS</button><button data-tab="pad">◎<br>DUALSENSE</button><button data-tab="practice">⌁<br>PRACTICE</button><button data-tab="settings">⚙<br>SETTINGS<button data-tab="macrolab">⌁<br>EDIT MACRO</button></button></nav>
 <section id="perf" class="panel"><div class="heading"><h2>01 / PERFORMANCE DASHBOARD</h2><span class="tag">DEVICE READOUT</span></div><div class="cols">
 <div class="card"><div class="label">Network status</div><b class="value" id="net">Checking…</b><div class="hint">Browser online state, not Fortnite ping.</div></div>
 <div class="card"><div class="label">Viewport</div><b class="value" id="view">—</b><div class="hint">Current app viewport in CSS pixels.</div></div>
@@ -100,5 +100,5 @@ $("macroStart").onclick=()=>{if(macroRunning)return;macroRunning=true;macroIndex
 $("macroMark").onclick=()=>{if(!macroRunning)return;$("macroHint").textContent="L3 practice tap recorded in this app. Continue with the prompt.";};
 $("macroStop").onclick=()=>{macroRunning=false;clearTimeout(macroTimer);$("macroStart").disabled=false;$("macroMark").disabled=true;$("macroStop").disabled=true;$("macroStep").textContent="PAUSED";$("macroHint").textContent="Practice paused. Start again when ready."};
 $("macroReset").onclick=()=>{macroRunning=false;clearTimeout(macroTimer);macroIndex=0;macroCount=0;$("macroCount").textContent="0";$("macroStart").disabled=false;$("macroMark").disabled=true;$("macroStop").disabled=true;$("macroStep").textContent="READY";$("macroHint").textContent="Start a repetition, then follow each prompt."};
-\nif("serviceWorker"in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});render();
+if("serviceWorker"in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});render();
 </script></body></html>
